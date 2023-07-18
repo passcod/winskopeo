@@ -34,10 +34,11 @@ jobs:
               }
             }`);
             console.log(result);
-            const remote = result.remote.latestRelease.tagName;
-            const local = result.local.latestRelease.tagName;
-            if (remote !== local) {
-              return remote;
+
+            const remote = result?.remote?.latestRelease?.tagName;
+            const local = result?.local?.latestRelease?.tagName;
+            if (remote !== local && remote !== null) {
+              return remote.replace(/^v/, '');
             } else {
               return 'nope';
             }
@@ -76,8 +77,8 @@ jobs:
               prerelease: false,
               body: `Skopeo v${process.env.VERSION} for Windows (no signing/gpg support)`,
             });
-            
-            await octokit.rest.repos.uploadReleaseAsset({
+
+            await github.rest.repos.uploadReleaseAsset({
               owner: context.repo.owner,
               repo: context.repo.repo,
               release_id: release.id,
