@@ -81,7 +81,7 @@ jobs:
             await github.rest.repos.uploadReleaseAsset({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              release_id: release.id,
-              name: `skopeo-${process.env.VERSION}.exe`,
+              release_id: release.data.id,
+              name: 'skopeo.exe',
               data: require('fs').readFileSync(`skopeo-${process.env.VERSION}/bin/skopeo.windows.amd64.exe`),
             });

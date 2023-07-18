@@ -12,5 +12,5 @@ If you need that, please fork, make it build, and send a PR!
 
 ```yaml
 - name: Download Skopeo
-  run: curl.exe -LO https://github.com/passcod/winskopeo/releases/download/latest/skopeo.exe
+  run: curl.exe -LO https://github.com/passcod/winskopeo/releases/latest/download/skopeo.exe
 ```
