@@ -8,6 +8,11 @@ The release versions are the same as the upstream ones.
 It builds a GPGme-less version, so operations involving signatures won't work.
 If you need that, please fork, make it build, and send a PR!
 
+## Absolutely zero support
+
+All this does is build a package.
+Go upstream for any issues that are not to do with the packaging.
+
 ## Usage in Github Actions
 
 ```yaml
